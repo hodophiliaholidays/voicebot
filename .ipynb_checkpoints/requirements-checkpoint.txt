@@ -1,5 +1,0 @@
-livekit-agents
-llama-index
-python-dotenv
-openai
-elevenlabs

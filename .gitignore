@@ -1,3 +1,4 @@
+
 # Ignore Python cache
 __pycache__/
 *.pyc
@@ -17,4 +18,6 @@ file.env
 .idea/
 
 # Ignore anything else you don't want to commit
+
+.ipynb_checkpoints/
 
