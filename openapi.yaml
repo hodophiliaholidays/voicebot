@@ -1,0 +1,47 @@
+swagger: "2.0"
+info:
+  title: Voicebot API Gateway
+  description: Public API Gateway for LiveKit Cloud Run Voicebot
+  version: 1.0.0
+host: voicebot-gateway-abcde.apigateway.asia-south1.gateway.dev  # ⬅️ REPLACE after Gateway creation
+
+x-google-backend:
+  address: https://voicebot-628280917168.asia-south1.run.app
+  protocol: h2
+  jwt_audience: https://voicebot-628280917168.asia-south1.run.app
+
+schemes:
+  - https
+paths:
+  /:
+    get:
+      summary: Root endpoint
+      operationId: voicebotRoot
+      responses:
+        '200':
+          description: OK
+
+  /{proxy+}:
+    get:
+      summary: Proxy everything else
+      operationId: proxyAllGet
+      parameters:
+        - name: proxy
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Proxied GET
+
+    post:
+      summary: Proxy all POST requests
+      operationId: proxyAllPost
+      parameters:
+        - name: proxy
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Proxied POST
