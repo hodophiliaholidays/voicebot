@@ -5,4 +5,10 @@ steps:
     args: [ 'push', 'gcr.io/$PROJECT_ID/my-app' ]
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: gcloud
-    args: [ 'run', 'deploy', 'my-app', '--image', 'gcr.io/$PROJECT_ID/my-app', '--region', 'us-central1', '--platform', 'managed', '--allow-unauthenticated' ]
+    args: [
+  'run', 'deploy', 'voicebot',
+  '--image', 'gcr.io/$PROJECT_ID/voicebot',
+  '--region', 'asia-south1',        # ✅ Use Mumbai
+  '--platform', 'managed',
+  '--allow-unauthenticated'
+]
