@@ -4,3 +4,5 @@ python-dotenv
 openai
 elevenlabs
 uvicorn[standard]
+fastapi
+uvicorn
