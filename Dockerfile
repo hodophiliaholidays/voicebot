@@ -25,3 +25,10 @@ ENV PYTHONUNBUFFERED=1
 
 # Command to start the LiveKit agent
 CMD ["python", "main.py", "start"]
+
+# Expose port Cloud Run expects
+EXPOSE 8080
+
+# Start FastAPI server using Uvicorn
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
+
